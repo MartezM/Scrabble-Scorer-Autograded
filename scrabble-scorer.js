@@ -108,7 +108,7 @@ function transform(word) {
          
       }
    }
-      console.log(sco);
+      console.log('Your word value is:', sco);
     return nstr;
  
 
