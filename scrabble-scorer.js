@@ -46,7 +46,7 @@ let simpleScorer = function(word){
  for (i = 0; i < word.length; i++){
    console.log(word[i], '+ 1');
  }
- return console.log('your word value is:', score)
+ return console.log('your word value is:', score);
 }
 
 let vowelBonusScorer = function(word){
@@ -57,11 +57,11 @@ let vowelBonusScorer = function(word){
    for (i = 0; i < word.length; i++){
       let newstr = word[i];
       if (vowel.includes(newstr)){
-        vScore = vScore + 3
-         console.log(word[i], "+ 3")
+        vScore = vScore + 3;
+         console.log(word[i], "+ 3");
       } else {
-        vScore = vScore + 1
-        console.log(word[i], "+ 1")
+        vScore = vScore + 1;
+        console.log(word[i], "+ 1");
       }
       
    }
@@ -83,36 +83,40 @@ function scorerPrompt() {
    2 - ${scoringAlgorithms[2].name}: ${scoringAlgorithms[2].Discription}
    Enter 0, 1, or 2 to get your score! :`);
    answer = Number(answer);
-   if (!isNaN(answer) && answer < 3){
-       console.log(answer)
-       return scoringAlgorithms[answer].ScoreFunction(word)
+   if (!isNaN(answer) && answer < 3);{
+       console.log(answer);
+       return scoringAlgorithms[answer].ScoreFunction(word);
      
    }
 }
 
 function transform(word) {
-  word = word.toUpperCase;
-   let scr;
-   let nstr = '';
-   for (i = 0; i > 7; i++);
-   nstr = word[i];
-   if(newPointStructure[i].name.includes(nstr)){
-      scr = newPointStructure[i].point + scr
+
+   let sco = 0;
+   let nstr;
+   let str;
+   for (let i = 0; i < word.length; i++) {
+         str = word[i]
+         console.log(str, '+', newPointStructure[str])
+
+ 
+      for (const X in newPointStructure) {
+         nstr = X
+       if (str == nstr){
+          sco = newPointStructure[X] + sco
+         }
+         
+      }
    }
-   console.log(scr);
-   console.log(nstr)
+      console.log(sco);
+    return nstr;
+ 
+
 }
 
-let newPointStructure = [
-   {name: ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T'], point: 1},
-   {name: ['D', 'G'], point: 2},
-   {name: ['B', 'C', 'M', 'P'], point: 3},
-   {name: ['F', 'H', 'V', 'W', 'Y'], point: 4},
-   {name: ['K'], point: 5},
-   {name: ['J', 'X'], point: 8},
-   {name: ['Q', 'Z'], point: 10}
-   
-];
+let newPointStructure = 
+   {"a": 1, "b": 3, "c": 3, "d": 2, "e": 1, "f": 4, "g": 2, "h": 4, "i": 1, "j": 8, "k": 5, "l": 1, "m": 3, "n": 1, "o": 1, "p": 3, "q": 10, "r": 1, "s": 1, "t": 1, "u": 1, "v": 4, "w": 4, "x": 8, "y": 4, "z": 10}
+;
 
 
 function runProgram() {
